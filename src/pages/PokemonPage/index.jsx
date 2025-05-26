@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const PokemonPage = () => {
+    const {id} = useParams()
+    console.log(id);
+    
     return (
         <>
             <h2>PokemonPage</h2>
@@ -8,5 +11,6 @@ const PokemonPage = () => {
         </>
     )
 }
+
 
 export default PokemonPage
