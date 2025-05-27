@@ -1,8 +1,11 @@
 import { Link, useParams } from "react-router-dom"
+import useFetchPokemonData from "../../hooks/useFetchPokemon"
 
 const PokemonPage = () => {
     const {id} = useParams()
-    console.log(id);
+    const pokemon = useFetchPokemonData(id)
+    console.log(pokemon);
+    
     
     return (
         <>
