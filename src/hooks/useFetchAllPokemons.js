@@ -14,11 +14,12 @@ const useFetchAllPokemons = (limit = 151) => {
 
         const pokemonList = await Promise.all(
           results.map(async (pokemon) => {
-            const { id, sprites } = await getPokemonInfo(pokemon.url);
+            const { id, types, sprites } = await getPokemonInfo(pokemon.url);
 
             return {
               name: pokemon.name,
               id,
+              types,
               sprites,
             };
           })
@@ -31,8 +32,8 @@ const useFetchAllPokemons = (limit = 151) => {
 
     const getPokemonInfo = async (url) => {
       const response = await api.get(url);
-      const { id, sprites } = response.data;
-      return { id, sprites };
+      const { id, types, sprites } = response.data;
+      return { id, types, sprites };
     };
 
     getAllPokemons();

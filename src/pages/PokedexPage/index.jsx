@@ -17,14 +17,17 @@ const PokedexPage = () => {
             <TitleContainer>
                 <h1>Pokedex</h1>
             </TitleContainer>
-            <ul>{pokemons.slice(0, quantidadeVisivel).map((pokemon, index) => (
+            <ul>{pokemons.slice(0, quantidadeVisivel).map((pokemon) => (
                 <li>
                     <PokemonCard
-                        key={index}
+                        key={pokemon.id}
                         name={pokemon.name}
                         alt={pokemon.name}
                         src={pokemon.sprites.other.dream_world.front_default}
                         to={`/pokemon/${pokemon.id}`}
+                        types={pokemon.types.map((type, index) => (
+                            <li key={index}>{type.type.name}</li>
+                        ))}                        
                     />
                 </li>
             ))}</ul>
