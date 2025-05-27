@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import useFetchAllPokemons from "../../hooks/useFetchAllPokemons"
 import PokemonCard from "../../components/pokemon-card"
 import styled from "styled-components"
@@ -18,7 +17,6 @@ const PokedexPage = () => {
             <TitleContainer>
                 <h1>Pokedex</h1>
             </TitleContainer>
-            <Link to="/pokemon">Ir para Pokemon Page</Link>
             <ul>{pokemons.slice(0, quantidadeVisivel).map((pokemon, index) => (
                 <li>
                     <PokemonCard
@@ -26,9 +24,6 @@ const PokedexPage = () => {
                         name={pokemon.name}
                         alt={pokemon.name}
                         src={pokemon.sprites.other.dream_world.front_default}
-                        types={pokemon.types.map((type, index) => (
-                            <li key={index}>{type.type.name}</li>
-                        ))}
                         to={`/pokemon/${pokemon.id}`}
                     />
                 </li>
