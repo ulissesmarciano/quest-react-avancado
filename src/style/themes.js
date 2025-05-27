@@ -2,13 +2,13 @@ export const themes = {
   light: {
     color: "#000000",
     background: "#eeeeee",
-    buttonBackground: "#ccc",
+    buttonBackground: "#000000",
     buttonColor: "#ffffff",
   },
   dark: {
     color: "#ffffff",
     background: "#24262B",
-    buttonBackground: "#333",
-    buttonColor: "#ffffff",
+    buttonBackground: "#ffffff",
+    buttonColor: "#000000",
   },
 };
