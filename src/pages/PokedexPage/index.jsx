@@ -13,9 +13,6 @@ const PokedexPage = () => {
 
     return (
         <Container>
-            <TitleContainer>
-                <h1>Pokedex</h1>
-            </TitleContainer>
             <ul>{pokemons.slice(0, quantidadeVisivel).map((pokemon) => (
                 <li>
                     <PokemonCard
@@ -39,6 +36,8 @@ const PokedexPage = () => {
 
 const Container = styled.main`
     width: 100%;
+
+    //#FF504F
 `
 
 const TitleContainer = styled.header`

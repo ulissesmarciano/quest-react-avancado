@@ -21,7 +21,7 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ theme }) => theme.buttonBackground};
+  background-color: #0861A6;
   border-radius: 30px;
   transition: background-color 0.4s;
 `;
