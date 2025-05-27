@@ -32,7 +32,7 @@ const Circle = styled.span`
   width: 20px;
   left: 1px;
   bottom: 0.5px;
-  background-color: ${({ theme }) => theme.buttonColor};
+  background-color: #ffffff;
   border-radius: 50%;
   transition: transform 0.4s;
   transform: ${({ checked }) => (checked ? "translateX(30px)" : "translateX(0)")};
@@ -45,7 +45,7 @@ const IconWrapper = styled.div`
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: ${({ theme }) => theme.buttonColor};
+  color: #ffffff;
   z-index: 1;
   pointer-events: none;
 
