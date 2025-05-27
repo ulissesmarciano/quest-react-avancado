@@ -11,7 +11,6 @@ const PokedexPage = () => {
         setQuantidadeVisivel((prev) => prev + 10)
     }
 
-    console.log("direto da pokedex", pokemons)
     return (
         <Container>
             <TitleContainer>
