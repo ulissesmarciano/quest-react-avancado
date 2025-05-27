@@ -2,9 +2,16 @@ import { Link } from "react-router-dom"
 import useFetchAllPokemons from "../../hooks/useFetchAllPokemons"
 import PokemonCard from "../../components/pokemon-card"
 import styled from "styled-components"
+import { useState } from "react"
 
 const PokedexPage = () => {
     const { pokemons } = useFetchAllPokemons()
+    const [quantidadeVisivel, setQuantidadeVisivel] = useState(10);
+
+    const verMais = () => {
+        setQuantidadeVisivel((prev) => prev + 10)
+    }
+
     console.log("direto da pokedex", pokemons)
     return (
         <Container>
@@ -12,7 +19,7 @@ const PokedexPage = () => {
                 <h1>Pokedex</h1>
             </TitleContainer>
             <Link to="/pokemon">Ir para Pokemon Page</Link>
-            <ul>{pokemons?.map((pokemon, index) => (
+            <ul>{pokemons.slice(0, quantidadeVisivel).map((pokemon, index) => (
                 <li>
                     <PokemonCard
                         key={index}
@@ -26,7 +33,9 @@ const PokedexPage = () => {
                     />
                 </li>
             ))}</ul>
-
+            {quantidadeVisivel < pokemons.length && (
+                <button onClick={verMais}>Ver mais</button> // CRIAR UM COMPONENTE GENÉRICO
+            )}
         </Container>
     )
 }
