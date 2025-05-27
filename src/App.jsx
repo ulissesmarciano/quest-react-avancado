@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Globalstyle />
       <Header toggleTheme={toggleTheme} currentTheme={theme} />
-      <AppRouter />
+      <AppRouter  />
     </ThemeProvider>
   );
 }
