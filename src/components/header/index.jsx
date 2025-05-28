@@ -4,13 +4,10 @@ import { ThemeTogglerButton } from "../theme-toggler-button"
 
 const Container = styled.header`
 
-  padding: 1rem;
+  padding: 0.2rem 1rem;
 
   background-color: #2899F2;
-
-  @media (min-width: 640px) {
-    padding: 2rem;
-  }
+  
 `
 
 const HeaderWrapper = styled.div`
