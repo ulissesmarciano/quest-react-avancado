@@ -63,7 +63,7 @@ const PokedexPage = () => {
                     />
                 ))}</ListContainer>
                 {quantidadeVisivel < pokemons.length && (
-                    <Button onClick={verMais} textInButton="Ver Mais" />// CRIAR UM COMPONENTE GENÉRICO
+                    <Button onClick={verMais} textInButton="Ver Mais" />
                 )}
             </Container>
         </>
