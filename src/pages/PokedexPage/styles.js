@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const LoaderContainer = styled.div`
+  min-height: calc(100vh - 59.38px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 export const Container = styled.main`
   max-width: 1280px;
   margin: 1rem;

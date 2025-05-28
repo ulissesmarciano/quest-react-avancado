@@ -2,6 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { pokemonTypeColors } from "../../constants/colors";
 
+export const LoaderContainer = styled.div`
+  min-height: calc(100vh - 59.38px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Container = styled.main`
   height: calc(100vh - 84.97px);
 

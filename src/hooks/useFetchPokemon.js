@@ -3,6 +3,8 @@ import api from "../services/api";
 
 const useFetchPokemonData = (id) => {
   const [pokemonData, setPokemonData] = useState({});
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
@@ -33,13 +35,15 @@ const useFetchPokemonData = (id) => {
         });
       } catch (error) {
         console.error(`Error fetching pokemon profile: ${error}`);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchPokemon();
   }, [id]);
 
-  return pokemonData;
+  return { pokemonData, loading };
 };
 
 export default useFetchPokemonData;

@@ -3,6 +3,7 @@ import api from "../services/api";
 
 const useFetchAllPokemons = (limit = 151) => {
   const [pokemons, setPokemons] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getAllPokemons = async () => {
@@ -26,6 +27,8 @@ const useFetchAllPokemons = (limit = 151) => {
         setPokemons(pokemonList);
       } catch (error) {
         console.error(`Unknown error ${error}`);
+      } finally {
+        setLoading(false)
       }
     };
 
@@ -38,7 +41,7 @@ const useFetchAllPokemons = (limit = 151) => {
     getAllPokemons();
   }, [limit]);
 
-  return { pokemons };
+  return { pokemons, loading };
 };
 
 export default useFetchAllPokemons;
