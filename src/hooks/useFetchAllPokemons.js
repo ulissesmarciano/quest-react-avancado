@@ -8,8 +8,7 @@ const useFetchAllPokemons = (limit = 151) => {
     const getAllPokemons = async () => {
       try {
         const response = await api.get(`/pokemon?limit=${limit}`);
-        
-        
+
         const { results } = response.data;
 
         const pokemonList = await Promise.all(

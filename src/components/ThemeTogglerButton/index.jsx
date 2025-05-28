@@ -1,4 +1,4 @@
-import { ToggleSwitch } from "../toggler-switch";
+import { ToggleSwitch } from "../TogglerSwitch";
 import { themes } from "../../style/themes";
 
 export const ThemeTogglerButton = ({ toggleTheme, currentTheme }) => {
@@ -10,4 +10,3 @@ export const ThemeTogglerButton = ({ toggleTheme, currentTheme }) => {
         </div>
     );
 };
-

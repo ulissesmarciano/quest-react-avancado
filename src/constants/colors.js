@@ -1,4 +1,3 @@
-
 export const pokemonTypeColors = {
   normal: "#a6a877",
   grass: "#77c850",

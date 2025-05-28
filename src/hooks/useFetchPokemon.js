@@ -18,13 +18,15 @@ const useFetchPokemonData = (id) => {
               (entry) => entry.language.name === "en"
             );
 
-              return {
+            return {
               name: abilityDetails.name,
-              description: effectEntryEn ? effectEntryEn.effect : "No description in English.",
+              description: effectEntryEn
+                ? effectEntryEn.effect
+                : "No description in English.",
             };
           })
         );
-        
+
         setPokemonData({
           ...pokemon,
           abilities: abilitiesData,

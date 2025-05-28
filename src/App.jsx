@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { Globalstyle } from "./style/global";
 import { AppRouter } from "./routes/AppRouter";
 import { themes } from "./style/themes";
-import Header from "./components/header";
+import Header from "./components/Header";
 
 function App() {
   const [theme, setTheme] = useState(themes.light);
@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Globalstyle />
       <Header toggleTheme={toggleTheme} currentTheme={theme} />
-      <AppRouter  />
+      <AppRouter />
     </ThemeProvider>
   );
 }

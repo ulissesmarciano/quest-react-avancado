@@ -1,46 +1,5 @@
 import { useState } from 'react'
-import styled from 'styled-components';
-
-const Container = styled.div`
-
-    display: flex;
-    flex-direction: column;
-`
-
-const TabHeaderContainer = styled.ul`
-    display: flex;
-    justify-content: space-around;
-`
-
-const Tab = styled.li`
-    padding: 0.6rem;
-    width: 100%;
-    border-radius: 0.2rem;
-    text-align: center;
-
-    font-weight: 500;
-    font-size: 1.2rem;
-    
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover{
-        background-color: #2899F2;
-    }
-`
-
-const TabContentContainer = styled.div`
-    padding: 1rem;    
-`
-
-const FistTabContent = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    @media(min-width: 640px){
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-`
+import { Container, FistTabContent, Tab, TabContentContainer, TabHeaderContainer } from './styles';
 
 const InfoTabScreen = ({ moves, abilities }) => {
     const [activeTab, setActiveTab] = useState("tab1");
