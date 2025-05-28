@@ -7,7 +7,7 @@ import styled from "styled-components"
 const Container = styled.main`
     height: calc(100vh - 84.97px);
 
-    padding: 1rem 2rem;
+    padding: 0.4rem 2rem;
 
     @media(min-width: 640px){
         height: calc(100vh - 116.96px);
@@ -61,7 +61,7 @@ const PokemonImgSection = styled.div`
 `
 
 const TypesListSection = styled.ul`
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     gap: 6rem;
@@ -74,6 +74,33 @@ const Types = styled.li`
     color: #fff;
     background-color: ${({ type }) => pokemonTypeColors[type] || "gray"};
     border-radius: 1rem;
+`
+
+const Move = styled.li`
+    padding: 0.2rem;
+    transition: 0.3s;
+
+    text-transform: capitalize;
+    font-weight: 400;
+
+    &:hover{
+        box-shadow: 1px 1px 1px 1px #888888;
+    }    
+`
+
+const Ability = styled.div`
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h4 {
+        text-transform: capitalize;
+    }
+
+    p {
+        line-height: 1.6rem;
+    }
 `
 
 
@@ -101,7 +128,19 @@ const PokemonPage = () => {
                     <Types type={type.type.name} key={index}>{type.type.name}</Types>
                 ))}
             </TypesListSection>
-            <InfoTabScreen />
+            <InfoTabScreen
+                moves={pokemon.moves?.map((move, index) => (
+                    <Move key={index}>{move.move.name}</Move>
+                ))}
+                abilities={pokemon.abilities?.map((ability, index) => (
+                    <li key={index}>
+                        <Ability>
+                            <h4>{ability.name}</h4>
+                            <p>{ability.description}</p>
+                        </Ability>
+                    </li>
+                ))}
+            />
         </Container>
     )
 }
