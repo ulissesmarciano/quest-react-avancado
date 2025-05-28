@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom"
+import { Container, Ability, BackLink, Id, Img, Move, NavLink, PokemonIdentitySection, PokemonImgSection, PokemonName, Types, TypesListSection } from "./styles"
 import useFetchPokemonData from "../../hooks/useFetchPokemon"
 import InfoTabScreen from "../../components/InfoTabScreen"
-
 
 const PokemonPage = () => {
     const { id } = useParams()
     const pokemon = useFetchPokemonData(id)
-    console.log(pokemon);
-
 
     return (
         <Container>
