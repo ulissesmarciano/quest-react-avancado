@@ -42,12 +42,6 @@ const FistTabContent = styled.ul`
     }
 `
 
-const SecondTabContent = styled.ul`
-
-`
-
-
-
 const InfoTabScreen = ({ moves, abilities }) => {
     const [activeTab, setActiveTab] = useState("tab1");
 
@@ -69,9 +63,9 @@ const InfoTabScreen = ({ moves, abilities }) => {
 
     const SecondTab = ({ abilities }) => {
         return (
-            <SecondTabContent>
+            <ul>
                 {abilities}
-            </SecondTabContent>
+            </ul>
         );
     };
 
